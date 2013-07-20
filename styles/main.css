@@ -1,0 +1,14 @@
+body{
+	margin-left: 20px;
+	background-color: #151522;
+	color: #eeeebb;
+}
+
+p{
+	margin-left: 20px;
+}
+
+.screen{
+	border-width:2px;
+	border-color: "white";
+}

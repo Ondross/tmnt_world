@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TMNT World: In Space!</title>
+  <script src="../lib/jquery.js"></script>
+  <script src="../lib/processing.js"></script>
+
+  <script src="../models/Array.js"></script>
+  <script src="../models/Vector.js"></script>
+
+  <script src="../models/Dude.js"></script>
+  <script src="../models/Bullet.js"></script>
+  <script src="../models/Planet.js"></script>
+  <script src="../models/Turtle.js"></script>
+  <script src="../models/settings.js"></script>
+
+  <script src="../stages/Stage.js"></script>
+  <script src="../stages/stage0.js"></script>
+  <script src="../stages/stage1.js"></script>
+
+  <script src="draw.js"></script>
+
+  <link href="../styles/bootstrap.css" rel="stylesheet"> 
+  <link href="../styles/main.css" rel="stylesheet"> 
+
+</head>
+
+<body>
+  <h1>Teenage Mutant Ninja Turtle World</h1>
+  <h2>Welcome to the Alpha, Dude! </h2>
+
+  <div class="row">
+  	<div class="span9">
+	  <canvas class="screen" data-processing-sources="graphic.pde"></canvas>
+	</div>
+	<div class="span3">
+      <h5>Leo's Brain</h3>
+	  <textarea rows="10" cols = "10" id="brainwash_leo"> </textarea>
+	  <input id="brainwasher" type="submit" value="Submit"  />
+
+	</div>
+</div>
+
+<div class="row">
+  <div class="span3">
+    <input id="slowdown" type="submit" value="-"  />
+    framerate
+    <input id="speedup" type="submit" value="+"  />
+    <input id="playback" type="submit" value="normal"  />
+  </div>
+</div>
+
+<div class="row">
+<div class="span10">
+  <h3> How to Play </h3>
+  <p>Click the map to pause/unpause<br><br>
+  All you gotta do is mine for energy, and then use that energy to blast the other turtles! You're Leo, the blue one.</br>
+  Tell Leo what to do by writing code for his turtle brain. Every time you hit submit, Leo will follow the instructions in the box. It's not case-sensitive.<br><br>
+  <b>Here is some of the stuff you can do:</b></br>
+  <b>chase(Anything)</b>: Chase after something</br>
+  <b>evade(Anything)</b>: Run away</br>
+  <b>shoot(Anything)</b>: Kill stuff. Bullets have a range and they cost energy.</br>
+  <b>mine(Planet)</b>: Mine a planet to get it's energy, dude! (You will automatically move towards a planet if you mine it)</p>
+
+  <p><b>Things in the world:</b><br>
+    <b>Turtles</b>: Ralph, Donna, Mitch, closest_turtle. The array is called Turtles<br>
+    <b>Bullets</b>: closest_bullet, or the array Bullets.<br>
+    <b>Planets</b>: Mars, Mercury, closest_planet, or the array Planets.<br>
+All these guys have attributes you can check out, like health, energy, etc. Hovering gives you the basic ones. Use the console to check out what else is available.
+
+
+
+  <p><b>Example Code: </b> <br>
+    chase(Mitch); <br>
+    mine(Mars); <br>
+    evade(Donna); <br>
+    shoot(Ralph); <br>
+    evade(closest_bullet); <br>
+    chase(closest_turtle); <br> 
+<br>
+<b>You can get more complicated: </b> <br>
+if (distance_to(closest_turtle) < 200){
+  shoot(closest_turtle);
+}
+
+  </p>
+</div>
+</body>
+</html>
